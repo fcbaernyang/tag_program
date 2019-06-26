@@ -1,0 +1,33 @@
+项目说明：本项目来自github的bert项目，具体地址为https://github.com/huggingface/pytorch-pretrained-BERT
+项目用途：本项目用于序列标注任务，使用模型为BERT，采用的任务模式是Single Sentence Tagging Task，具体的理论部分详见论文BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+模型最终的预测结果存储在predict_file_dir中
+项目使用方法：修改配置文件后，运行tag.sh文件，配置文件为tag.yml
+  训练模型 将do_train设置为True
+  进行验证 将do_eval设置为True
+  进行测试 将do_test设置为True
+数据集格式:训练集、验证集和测试集的数据格式一致。
+           一行由一个句子中一个字(或者一个英文单词或者一串数字)和相应的标签组成。一个句子的最后一个字后面为一个换行符以此区分两个句子。
+           例子：   第	B
+                    一	I
+                    句	I
+                    话	I
+                    的	O
+                    内	O
+                    容	O
+                
+                    第	B
+                    二	I
+                    句	I
+                    话	I
+                    的	O
+                    内	O
+                    容	O
+                    
+
+
+训练集文件要求:第一行为字符串 "train data"
+验证集文件要求:第一行为字符串 "dev data"
+测试集文件要求:第一行为字符串 "test data"
+环境要求: __future__,csv,yaml,os,logging,argparse,random,tqdm,sklearn,numpy,torch(1.0.0),sys,pytorch_pretrained_bert_1,pytorch_pretrained_bert
+具体的项目参数在tag.yml。
+项目主要使用的类和函数说明以及流程说明详见tag.py代码注释

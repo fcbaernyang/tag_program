@@ -1,0 +1,59 @@
+#是否进行训练
+do_train: True
+
+#是否进行验证
+do_eval: False
+
+#是否进行测试
+do_test: True
+
+#训练集文件的地址
+train_data_dir:  
+
+#验证集文件的地址
+dev_data_dir: 
+
+#测试集文件的地址
+test_data_dir: 
+
+#分类类别文件的地址 由训练集生成
+label_list_dir: ./tag_label_list.txt
+
+#bert模型的配置文件的地址
+bert_config_dir: ./config/bert_config.json
+
+#bert分词字典的地址
+tokenizer_dir: ./vocab/vocab.txt
+
+#预训练bert模型的地址
+origin_bert_model_dir: ./bert-base-chinese/
+
+#fine-tuning bert模型的地址
+bert_model_output_dir: ./bert_model/tag_program.bin
+
+#对测试集预测的文件的地址
+predict_file_dir: ./preidct_file/tag_program_predict_file.txt
+
+#最大句子长度
+max_seq_length: 128
+
+#训练集batch size
+train_batch_size: 16
+
+#验证集batch size
+eval_batch_size: 16
+
+#测试集batch size
+test_batch_size: 16
+
+#学习率
+learning_rate: 2e-5
+
+#训练轮次
+num_train_epoch: 5
+
+#是否使用gpu
+cuda_use: True
+
+#是否将英文转换成小写字母
+do_lower_case: True
